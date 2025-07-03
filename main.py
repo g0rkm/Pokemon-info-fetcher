@@ -67,15 +67,15 @@ def getTypes(pokemonInput):
         typeList.append(typeName["name"])
 
 #Gettin pokemons's height and weight
-physicalAttiributesList={}
+physicalAttributesList={}
 def getPhysicalAttributes(pokemonInput):
-    global physicalAttiributesList
-    physicalAttiributesList = {}
+    global physicalAttributesList
+    physicalAttributesList = {}
     phyresponse=requests.get(f"https://pokeapi.co/api/v2/pokemon/{pokemonInput}")
     heigt=phyresponse.json()["height"]
     weight=phyresponse.json()["weight"]
-    physicalAttiributesList["height"]=heigt
-    physicalAttiributesList["weight"]=weight
+    physicalAttributesList["height"]=heigt
+    physicalAttributesList["weight"]=weight
 
 
 # Getting pokemon's all info
@@ -167,7 +167,7 @@ abilityLabel2=tkinter.Label(font=("Arial", 12, "normal"))
 def changeValues():
     global abilityList
     global statsList
-    global physicalAttiributesList
+    global physicalAttributesList
     global typeList
     global typesLabel2
     global abilityLabel2
@@ -177,8 +177,8 @@ def changeValues():
     speedLabel.config(text=f"Speed: {statsList['speed']}")
     defenseLabel.config(text=f"Defense: {statsList['defense']}")
 
-    weightLabel.config(text=f"Weight: {physicalAttiributesList['weight']}")
-    heightLabel.config(text=f"Height: {physicalAttiributesList['height']}")
+    weightLabel.config(text=f"Weight: {physicalAttributesList['weight']}")
+    heightLabel.config(text=f"Height: {physicalAttributesList['height']}")
 
 
     if len(typeList)==2:
