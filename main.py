@@ -177,8 +177,8 @@ def changeValues():
     speedLabel.config(text=f"Speed: {statsList['speed']}")
     defenseLabel.config(text=f"Defense: {statsList['defense']}")
 
-    weightLabel.config(text=f"Weight: {physicalAttributesList['weight']}")
-    heightLabel.config(text=f"Height: {physicalAttributesList['height']}")
+    weightLabel.config(text=f"Weight: {physicalAttributesList['weight']} cm")
+    heightLabel.config(text=f"Height: {physicalAttributesList['height']} kg")
 
 
     if len(typeList)==2:
